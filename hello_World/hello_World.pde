@@ -6,7 +6,7 @@
 size(700, 400); //Able to deploy with fullScreen();
 //
 //Concatenation
-println("Width =", width, "Height =", height);
+println("Width =", width, "\tHeight =", height);
 println(displayWidth, displayHeight);
 //
 //Outputting instructions to user when errors with above
