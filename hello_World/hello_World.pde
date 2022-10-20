@@ -28,6 +28,7 @@ void setup() {
 } //End setup
 //
 void draw() {
+  fill(58, 29, 0);
   ellipse(350, 100, 150, 150);
   rect(315, 125, 75, 10);
   ellipse(330, 75, 5, 5);
@@ -35,8 +36,8 @@ void draw() {
   rect(250, 175, 200, 400);
   rect(250, 575, 50, 200);
   rect(400, 575, 50, 200);
-  rect(450, 250, 200, 50);
-  rect(50, 250, 200, 50);
+  rect(450, 225, 200, 50);
+  rect(50, 225, 200, 50);
 } //End draw
 //
 void keyPressed() {
