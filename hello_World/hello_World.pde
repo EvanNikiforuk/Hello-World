@@ -1,7 +1,7 @@
 //Global Variables
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
-color blackNightMode=#000000, blue=#00FFFD, purple=#CF00FA, white=#FFFFFF; //Hexidecimal
+color blackNightMode=#000000, blue=#008FFA, yellow=#FAFF7E, white=#FFFFFF; //Hexidecimal
 float thin, normal, thick;
 //
 void setup() {
@@ -48,10 +48,10 @@ void draw() {
   //Casting Reminder
   background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Colour without blue
   //
-  background( blackNightMode );
+  //background( blackNightMode );
   strokeWeight( thick );
   stroke( blue );
-  fill( purple );
+  fill( yellow );
   rect(xStart, yStart, widthRect, heightRect);
   fill( white ); //default reset
   stroke( blackNightMode ); //default reset
