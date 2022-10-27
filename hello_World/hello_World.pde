@@ -1,8 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
-color blackNightMode=#000000, blue=#008FFA, yellow=#FAFF7E, white=#FFFFFF; //Hexidecimal
-color blueNightMode=#5856E0, yellowNightMode=#F6FF00;
+color blackNightMode=#000000, blue=#008FFA, yellow=#FAFF00, white=#FFFFFF; //Hexidecimal
+color blueNightMode=#008F00, yellowNightMode=#F6FF00;
 float thin, normal, thick;
 Boolean nightMode=false, randomBackground=false;
 //
