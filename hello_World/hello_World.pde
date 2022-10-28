@@ -2,13 +2,13 @@
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
 color blackNightMode=#000000, blue=#008FFA, yellow=#FAFF00, white=#FFFFFF; //Hexidecimal
-color blueNightMode=#008F00, yellowNightMode=#F6FF00;
+color blueNightMode=#008F00, yellowNightMode=#F6FF00; //Hexidecimal
 float thin, normal, thick;
-Boolean nightMode=false, randomBackground=false;
+Boolean nightMode=false, randomBackground=false, grayScale=false, backgroundColour=false;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
-  size(700, 400); //Able to deploy with fullScreen();
+  size(700, 900); //Able to deploy with fullScreen();
   //fullScreen();
   appWidth = width;
   appHeight = height;
@@ -45,25 +45,48 @@ void setup() {
 void draw() {
   // New Background Function "covers" old gray scale background()
   // Night Mode means background cannot have blue // change randome for night mode, hard code "0"
-  background(100); //Gray Scale (0-255) & Blue Issue for night mode
+  if ( grayScale == true ) background(100); //Gray Scale (0-255) & Blue Issue for night mode
   //
   //Casting Reminder
-  background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Colour without blue
+  if ( backgroundColour == true) background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Colour without blue
   //
-  //background( blackNightMode );
   strokeWeight( thick );
-  stroke( blue ); //blueNightMode
-  fill( yellow ); //yellowNightMode
+  if ( nightMode == true ) 
+  {
+    background( blackNightMode );
+    stroke( blueNightMode );
+    fill( yellowNightMode );
+    
+  } else 
+  {
+  stroke(blue);
+  fill(yellow);
+  }
   rect(xStart, yStart, widthRect, heightRect);
   fill( white ); //default reset
   stroke( blackNightMode ); //default reset
   strokeWeight(1); //default reset
+  fill(58, 29, 0);
+  ellipse(350, 140, 150, 150);
+  rect(315, 150, 75, 10);
+  ellipse(330, 100, 5, 5);
+  ellipse(375, 100, 5, 5);
+  rect(200, 685, 100, 200);
+  rect(400, 685, 100, 200);
+  rect(535, 225, 150, 50);
+  rect(15, 225, 150, 50);
 } //End draw
 //
 void keyPressed() {
+  grayScale = false;
+  backgroundColour = false;
+  if ( key == 'G' || key =='g' ) grayScale = true;
+  if ( key == 'B' || key =='b' ) backgroundColour = true;
 } //End keyPressed
 //
 void mousePressed() {
+  if ( mouseButton == LEFT ) nightMode = true;
+  if ( mouseButton == RIGHT ) nightMode = false;
 } //End mousePressed
 //
 // End Main Program
