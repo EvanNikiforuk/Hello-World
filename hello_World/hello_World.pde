@@ -6,16 +6,11 @@ color blueNightMode=#008F00, yellowNightMode=#F6FF00;
 float thin, normal, thick;
 Boolean nightMode=false, randomBackground=false, grayScale=false, backgroundColour=false;
 //
-  int ballCount = 250;
-
-float[] x = new float[ballCount];
-float[] y = new float[ballCount];
-float[] xSpeed = new float[ballCount];
-float[] ySpeed = new float[ballCount];
-float[] size = new float[ballCount];
-float[] r = new float[ballCount];
-float[] g = new float[ballCount];
-float[] b = new float[ballCount];
+/**
+ * Continuous Lines. 
+ * 
+ * Click and drag the mouse to draw a line. 
+ */
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
   size(700, 900); //Able to deploy with fullScreen();
@@ -50,16 +45,6 @@ void setup() {
   thin = appWidth / appWidth; //1
   normal = appWidth * 1/70;
   thick = appWidth * 1/35;
-    for(int i = 0; i < ballCount; i++){
-    x[i] = random(width);
-    y[i] = random(height);
-    xSpeed[i] = random(-5, 5);
-    ySpeed[i] = random(-5, 5);
-    size[i] = random(5, 20);
-    r[i] = random(255);
-    g[i] = random(255);
-    b[i] = random(0);
-  }
 } //End setup
 //
 void draw() {
@@ -94,20 +79,9 @@ void draw() {
   rect(400, 685, 100, 200);
   rect(535, 235, 150, 50);
   rect(15, 235, 150, 50);
-  for(int i = 0; i < ballCount; i++){
-    
-    x[i] += xSpeed[i];
-    if(x[i] < 0 || x[i] > width){
-      xSpeed[i] *= -1;
-    }
-    
-    y[i] += ySpeed[i];
-    if(y[i] < 0 || y[i] > height){
-      ySpeed[i] *= -1;
-    }
-    
-    fill(r[i], g[i], b[i]);
-    ellipse(x[i], y[i], size[i], size[i]);
+  stroke(255);
+  if ( mousePressed == true ) {
+    line(mouseX, mouseY, pmouseX, pmouseY);
   }
 } //End draw
 //
