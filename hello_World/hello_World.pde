@@ -10,12 +10,7 @@ float g = 0;
 float b = 0;
 float bR,bG,bB;
 int penSize = 1;
-//
-/**
- * Continuous Lines. 
- * 
- * Click and drag the mouse to draw a line. 
- */
+// 
 void setup() {
   bR = random(255);
   bG = random(255);
