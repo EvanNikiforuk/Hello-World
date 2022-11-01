@@ -14,7 +14,7 @@ int penSize = 1;
 void setup() {
   bR = random(255);
   bG = random(255);
-  bB = random(255);
+  bB = random(0);
   background(bR,bG,bB);
   //Declaring Display Geometry: landscape, square, portrait
   size(700, 900); //Able to deploy with fullScreen();
@@ -62,7 +62,7 @@ void draw() {
   strokeWeight( thick );
   if ( nightMode == true )
   {
-    background( blackNightMode );
+   background( blackNightMode );
     stroke( blueNightMode ); 
     fill( yellowNightMode ); 
   } else
@@ -101,13 +101,13 @@ void draw() {
   rect(50,height-50,50,50);
   fill(255,255,0);
   rect(100,height-50,50,50);
-  fill(255);
+  fill(170,100,0);
   rect(150,height-50,50,50);
   fill(0);
   rect(200,height-50,50,50);
-  fill(255);
+  fill(170,100,0);
   rect(250,height-50,50,50);
-  fill(random(0,255),random(0,255),random(0,255));
+  fill(random(0,255),random(0,255),random(0));
   text("?",273,height-20);
   
   if(mousePressed&&mouseX<50&&mouseY>height-50) {
@@ -120,48 +120,48 @@ void draw() {
     r = 255; g = 255; b = 0;
   }
   if(mousePressed&&mouseX>150&&mouseX<200&&mouseY>height-50) {
-    r = 255; g = 255; b = 255;
+    r = 170; g = 100; b = 0;
   }
   if(mousePressed&&mouseX>200&&mouseX<250&&mouseY>height-50) {
     r = 0; g = 0; b = 0;
   }
   if(mousePressed&&mouseX>250&&mouseX<300&&mouseY>height-50) {
-    r = random(255); g = random(255); b = random(255);
+    r = random(255); g = random(255); b = random(0);
   }
   
-  //pen size nuttons
+  //pen size buttons
   
   
   
   
   
-  fill(0);
+  fill(0,255,0);
   if (mousePressed&&mouseX>350-10&&mouseX<350+10&&mouseY>height-50) {
     penSize = 50;
-    fill(255);
+    fill(0);
   }
   ellipse(350,height-25,50,50);
-  fill(0);
+  fill(0,255,0);
   if (mousePressed&&mouseX>400-10&&mouseX<400+10&&mouseY>height-50) {
     penSize = 25;
-    fill(255);
+    fill(0);
   }
   ellipse(400,height-25,25,25);
-  fill(0);
+  fill(0,255,0);
   if (mousePressed&&mouseX>430-10&&mouseX<430+10&&mouseY>height-50) {
     penSize = 10;
-    fill(255);
+    fill(0);
   }
   ellipse(430,height-25,10,10);
-  fill(0);
+  fill(0,255,0);
   if (mousePressed&&mouseX>450-10&&mouseX<450+10&&mouseY>height-50) {
     penSize = 1;
-    fill(255);
+    fill(0);
   }
   ellipse(450,height-25,2,2);
   
   //save button
-  fill(255);
+  fill(170,100,0);
   rect(500,height-50,50,50);
   fill(0);
   text("SAVE",510,height-20);
@@ -189,7 +189,7 @@ void mousePressed() {
   if (mouseX>550&&mouseX<900&&mouseY>height-50) {
     bR = random(255);
     bG = random(255);
-    bB = random(255);
+    bB = random(0);
     background(bR,bG,bB);
   }
 } //End mousePressed
